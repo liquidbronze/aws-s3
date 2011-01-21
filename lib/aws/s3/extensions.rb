@@ -162,9 +162,12 @@ module Kernel
 end
 
 class Object
-  def returning(value)
-    yield(value)
-    value
+  unless method_defined?(:tap)
+    # Provided by Ruby 1.9 and Rails 3 ActiveSupport.
+    def tap
+      yield self
+      self
+    end
   end
 end
 
