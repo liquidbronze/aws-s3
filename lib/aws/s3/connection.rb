@@ -12,7 +12,7 @@ module AWS
           # Escape square brackets and single quotes and question marks. 
           # if marker is present put back teh question mark.
           
-          path = URI.escape(path).gsub(/[\[\]'\?]/) { |m| "%%%02x" % m[0].ord }
+          path = URI.escape(path).gsub(/[\[\]'\?\+]/) { |m| "%%%02x" % m[0].ord }
           path.gsub("%3fmarker=","?marker=")
         end
       end
