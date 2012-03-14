@@ -9,8 +9,11 @@ module AWS
         def prepare_path(path)
           path = path.remove_extended unless path.valid_utf8?
 
-          # Escape square brackets and single quotes
-          URI.escape(path).gsub(/[\[\]']/) { |m| "%%%02x" % m[0].ord }
+          # Escape square brackets and single quotes and question marks. 
+          # if marker is present put back teh question mark.
+          
+          path = URI.escape(path).gsub(/[\[\]'\?]/) { |m| "%%%02x" % m[0].ord }
+          path.gsub("%3fmarker=","?marker=")
         end
       end
       
