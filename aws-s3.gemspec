@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'aws-s3'
-  s.version = '0.6.4.2'
+  s.version = '0.6.4.3'
   s.authors = ["Marcel Molina Jr."]
   s.date = %q{2010-08-06}
   s.summary = "AWS::S3 -- Support for Amazon S3's REST api"

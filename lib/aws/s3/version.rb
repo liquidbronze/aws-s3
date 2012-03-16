@@ -6,6 +6,6 @@ module AWS
       TINY     = '4'
     end
 
-    Version = [VERSION::MAJOR, VERSION::MINOR, VERSION::TINY, 2].compact * '.'
+    Version = [VERSION::MAJOR, VERSION::MINOR, VERSION::TINY, 3].compact * '.'
   end
 end
