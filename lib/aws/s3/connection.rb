@@ -14,7 +14,7 @@ module AWS
 
           path = URI.escape(path).gsub(/[\[\]'\?\+]/) { |m| "%%%02x" % m[0].ord }
           path = path.gsub("%3fmarker=","?marker=")
-          path.gsub("%3fmax-keys=","?max-keys=")
+          path = path.gsub("%3fmax-keys=","?max-keys=")
         end
       end
 
